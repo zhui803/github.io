@@ -1,2 +1,2 @@
-# Milestone-4-Static-Vis-Implementation
-CS541 Info Viz
+# Milestone-4-Interactive-Vis-Implementation
+
