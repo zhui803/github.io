@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employment Rate</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    </div>
+    <main class="wrapper">
+        <div class="right-column">
+          <div class="right-column-content" id="poem-container">
+            <div class="filler-verse"></div>
+
+              <h1 class="poem-title">Silhouettes of Empowerment</h1>
+              <h2 class="author">by Chloe Liu</h2>
+
+              <ul class="verse" id="verse1">
+                <li class="line" id="line1">In the mirror,</li>
+                <li class="line" id="line2">A reflection not just of beauty, but capability,</li>
+                <li class="line" id="line3">The potential of skills, minds, innovation, often unformed.</li>
+                <li class="line" id="line4">Yet, in each data point, a revolution unfolds,</li>
+                <li class="line" id="line5">Where femininity and ability, courageously hold.</li>
+              </ul>
+
+              <ul class="verse" id="verse2">
+                <li class="line" id="line1">From mother's womb I took my flight,</li>
+                <li class="line" id="line2">As a spring of female empowerment,</li>
+                <li class="line" id="line3">Echoed in the voices of sisters across continents.</li>
+              </ul>
+
+              <ul class="verse" id="verse3">
+                <li class="line" id="line1">Waves of female toil are speaking loudly,</li>
+                <li class="line" id="line2">We are not mere silhouettes of societal imprints,</li>
+                <li class="line" id="line3">But a creator, a worker, a change-maker.</li>
+              </ul>
+
+              <ul class="verse" id="verse4">
+                <li class="line" id="line1">The truths, the stories, the silent pleas,</li>
+                <li class="line" id="line2">Of women who work, strive, and believe.</li>
+                <li class="line" id="line3">But a creator, a worker, a change-maker,</li>
+                <li class="line" id="line4">Fights for equality, hand in hand.</li>
+              </ul>
+
+              <ul class="verse" id="verse5">
+                <li class="line" id="line1">Find our reflection, diverse yet aligned,</li>
+                <li class="line" id="line2">A <span class="clickable-word global-word">global</span>
+                  sisterhood, empowered and defined.</li>
+                <li class="line" id="line3">For the fight is not solitary,</li>
+                <li class="line" id="line4">But rising, resounding, in collective solidarity.</li>
+              </ul>
+
+            <footer>
+              <button class="arrow-button" id="backward-button">◄</button>
+              <button class="arrow-button" id="forward-button">►</button>
+            </footer>
+            <div class="filler-verse"></div>
+          </div>
+        </div>
+
+        <div class="left-column">
+          <div class="left-column-content">
+            <header>
+              <h1 class="title">Female employment-to-population ratio, 1960</h1>
+            </header>
+            <div class="map-container">
+              <div class="region-dropdown">
+                  <select id="region-dropdown">
+                      <option value="World">World</option>
+                      <option value="Africa">Africa</option>
+                      <option value="North America">North America</option>
+                      <option value="South America">South America</option>
+                      <option value="Asia">Asia</option>
+                      <option value="Europe">Europe</option>
+                      <option value="Oceania">Oceania</option>
+                  </select>
+              </div>
+            </div> 
+            <div class="sidebar"></div>
+            <div class="slider-container"></div>
+            <div class="color-gradient-bar"></div>
+          </div>
+        </div>
+
+      </main>
+    
+    <div id="tooltip" class="hidden">
+      <p><strong>Country:</strong> <span id="tooltip-country"></span></p>
+      <p><strong>Female Employment Rate:</strong> <span id="tooltip-rate"></span>%</p>
+    </div>
+
+    <div id="graph-tooltip" class="hidden"></div>
+
+    <div id="animation-indicator" class="hidden">Animation on the Map in progress!!</div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
