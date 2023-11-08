@@ -212,7 +212,6 @@ g.selectAll('path').on('click', function(event, d) {
         let [x, y] = path.centroid(d);
         let [translateX, translateY] = projection([x, y]);
         
-        // Adjust the position based on the size of the tooltip if necessary
         d3.select('#graph-tooltip')
                     .transition()
                     .duration(500)
@@ -226,7 +225,6 @@ g.selectAll('path').on('click', function(event, d) {
     }
 });
 
-// Hide the tooltip when clicking anywhere on the SVG outside the countries
     mapSVG.on('click', function() {
         d3.select('#graph-tooltip').classed('hidden', true);
     });
@@ -239,7 +237,7 @@ g.selectAll('path').on('click', function(event, d) {
 }
 
 function createLineGraph(containerSelector, data, countryName) {
-    // Remove any existing SVG first to prevent duplicates
+
     d3.select(containerSelector).selectAll('svg').remove();
 
     // Define the size of the graph
@@ -326,7 +324,6 @@ function updateMap() {
         console.log(countryEntityName);
         const employmentValue = employmentLookup[countryEntityName] ? employmentLookup[countryEntityName][currentYear] : null;
 
-        // Set fill based on employment value
         if (employmentValue != null) {
             d3.select(this).attr('fill', colorScale(employmentValue));
         } else {
@@ -517,7 +514,6 @@ function activateKeyframe(verseIndex) {
 }
 
 function resetSvgUpdateFlags() {
-    // Reset svgUpdateCalled flags for all keyframes except the first one
     keyframes.forEach((kf, index) => {
         if (index !== 0) { // Skip the first verse to avoid re-initialization
             kf.svgUpdateCalled = false;
@@ -609,8 +605,7 @@ function setActiveVerse(verseNumber) {
         updateMap();
         updateTitleYear(currentYear);
     } else {
-        // For verse 1 or any other verses where you want the full map view
-        currentYear = 1960; // Or the default year for the full map view
+        currentYear = 1960; 
         
         // Zoom out to the full map view
         mapSVG.transition().duration(1000)
@@ -644,10 +639,8 @@ function zoomInOnChina() {
 }
 
 function zoomOutFullView() {
-    // Reset the zoom level to show the full map
     mapSVG.transition().duration(1000).call(zoom.transform, d3.zoomIdentity);
 
-    // Reset any highlighted countries or other visual styles
     g.selectAll('path').classed('highlighted', false);
 
 }
@@ -656,34 +649,29 @@ function showBirthYearExplanation() {
 
     g.selectAll('.birth-balloon').remove();
 
-    // Assume 'chinaPath' is the d3 selection of the path element for China
     let chinaPath = g.selectAll('path').filter(function(d) {
         return d.properties.name === 'China';
     });
 
-    // Get the centroid of China's path
     let centroid = path.centroid(chinaPath.datum());
 
-    // Create a group for the speech balloon
     let balloonGroup = g.append('g')
         .attr('class', 'birth-balloon')
         .attr('transform', `translate(${centroid[0]}, ${centroid[1] - 30})`); // Adjust this translation as needed
 
-    // Append a rectangle to the group (as the balloon background)
     balloonGroup.append('rect')
-        .attr('x', -50) // Adjust the x position as needed
-        .attr('y', -35) // Adjust the y position as needed
-        .attr('width', 150) // Set the width of the balloon background
-        .attr('height', 40) // Set the height of the balloon background
-        .attr('rx', 5) // Optional: set this to make the corners rounded
-        .attr('ry', 5) // Optional: set this to make the corners rounded
+        .attr('x', -50) 
+        .attr('y', -35) 
+        .attr('width', 150)
+        .attr('height', 40)
+        .attr('rx', 5)
+        .attr('ry', 5) 
         .style('fill', 'white')
         .style('stroke', 'black');
 
-    // Append text to the group
     balloonGroup.append('text')
-        .attr('x', -45) // Adjust the x position as needed
-        .attr('y', -10) // Adjust the y position to align the text within the rectangle
+        .attr('x', -45) 
+        .attr('y', -10) 
         .text('I was born here in 2002')
         .style('fill', 'black')
         .style('font-size', '15px');
@@ -702,22 +690,16 @@ function animateSliderAndMap(startYear, endYear, duration) {
     const yearRange = endYear - startYear;
     const intervalDuration = duration / yearRange;
   
-    // Set up an interval to update the map as the handle moves
+
     animationInterval = d3.interval(elapsed => {
-      // Calculate the current year based on the elapsed time
       const currentYear = startYear + Math.round((elapsed / duration) * yearRange);
       if (currentYear <= endYear) {
-        // Update the map for the current year
         updateYearAndMap(currentYear);
       } else {
-        // Stop the interval when the end year is reached
         animationInterval.stop();
         d3.select('#animation-indicator').classed('hidden', true);
       }
     }, intervalDuration);
-  
-    // Ensure the transition and interval are stopped when the animation is complete
-    // sliderTransition.on("end", () => interval.stop());
 }
 
 function updateYearAndMap(year) {
