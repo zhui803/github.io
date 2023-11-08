@@ -18,7 +18,7 @@ _Dynamic Temporal Animation_: During the third verse, the map displays a dynamic
 
 _'Global' Interaction_: The term "global" within the poem is interactive. Clicking it initiates a golden highlight that spans the entire map, emphasizing the connectedness of the data.
 
-**Custom Interactions**__:
+**Custom Interactions**:
 
 A _drop-down menu_ allows the audience to select and view specific continents with fluid transitions.
 A slider bar lets users manually explore the data across different years.
