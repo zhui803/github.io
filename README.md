@@ -26,7 +26,7 @@ Hovering over a country presents a tooltip with the country's name and its femal
 Clicking on a country summons a line graph that tracks the female employment trends for that country from 1960 to 2021.
 Feedback Integration
 
-Constructive feedback from HW 4 - Scrollytelling has been integrated, ensuring that visual elements reset appropriately when navigating between verses and that transitions are seamless.
+Constructive feedback from HW 4 - Scrollytelling from Thomas has been integrated, ensuring that visual elements reset appropriately when navigating between verses and that transitions are seamless.
 
 **Optimal Viewing Guidelines**
 
